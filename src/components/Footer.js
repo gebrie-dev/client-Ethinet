@@ -1,4 +1,3 @@
-// src/components/Footer.js
 import { Link } from 'react-router-dom';
 import { 
   FaFacebookF, 
@@ -32,6 +31,11 @@ function Footer() {
 
   return (
     <FooterContainer>
+      <logo
+        src="/logo.png"
+        alt="Ethionet Logo"
+        onError={(e) => { e.target.src = 'https://placehold.co/150x50/dbeafe/1e40af?text=Ethionet+Logo'; }}
+      />
       <FooterColumns>
         <FooterColumn>
           <FooterHeading>About</FooterHeading>
@@ -76,16 +80,16 @@ function Footer() {
         <FooterColumn>
           <FooterHeading>Connect</FooterHeading>
           <SocialIcons>
-            <SocialIcon href="#">
+            <SocialIcon href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
             </SocialIcon>
-            <SocialIcon href="#">
+            <SocialIcon href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <FaTwitter />
             </SocialIcon>
-            <SocialIcon href="#">
+            <SocialIcon href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
               <FaLinkedinIn />
             </SocialIcon>
-            <SocialIcon href="#">
+            <SocialIcon href="https://youtube.com" target="_blank" rel="noopener noreferrer">
               <FaYoutube />
             </SocialIcon>
           </SocialIcons>

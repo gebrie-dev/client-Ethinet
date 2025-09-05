@@ -1,5 +1,4 @@
 // src/components/FeaturedServicesSection.js
-import { Link } from 'react-router-dom';
 import { FaGlobeAmericas, FaChartLine, FaArrowRight } from 'react-icons/fa';
 import { ServicesContainer, ServiceCard, CardIcon, CardTitle, CardText, CardLink } from '../styles/FeaturedServicesSection.styled';
 

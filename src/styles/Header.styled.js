@@ -1,20 +1,26 @@
-// src/styles/Header.styled.js
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
   background-image: url('/images/header-background.png');
   background-size: cover;
   background-position: center;
   background-color: #1e40af;
   color: #ffffff;
-  padding: 3rem 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  position: relative;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
 
   &:before {
     content: '';
@@ -23,7 +29,7 @@ export const StyledHeader = styled.header`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay for better contrast */
     z-index: 1;
     border-radius: inherit;
   }
@@ -35,28 +41,45 @@ export const StyledHeader = styled.header`
 `;
 
 export const HeaderLeft = styled.div`
+  flex: 1;
   display: flex;
   align-items: center;
 `;
 
 export const HeaderCenter = styled.div`
-  flex-grow: 1;
+  flex: 2;
   text-align: center;
-`;
 
-export const HeaderRight = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  @media (min-width: 768px) {
-    flex-grow: 0;
+  h1 {
+    font-family: 'Inter', sans-serif; /* Modern font */
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 `;
 
+export const HeaderRight = styled.nav`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 export const Logo = styled.img`
-  height: 2.5rem;
+  height: 40px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
   border-radius: 0.25rem;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @media (min-width: 768px) {
+    height: 50px;
+    max-width: 200px;
+  }
 `;
 
 export const MenuToggle = styled.button`
@@ -67,9 +90,11 @@ export const MenuToggle = styled.button`
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 9999px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background-color: #1e40af;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fb923c;
   }
 
   &:focus {

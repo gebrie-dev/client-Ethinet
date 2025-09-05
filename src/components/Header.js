@@ -1,7 +1,13 @@
-// src/components/Header.js
-import { Link } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
-import { StyledHeader, HeaderLeft, HeaderCenter, HeaderRight, Logo, MenuToggle } from '../styles/Header.styled';
+import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import {
+  StyledHeader,
+  HeaderLeft,
+  HeaderCenter,
+  HeaderRight,
+  Logo,
+  MenuToggle,
+} from "../styles/Header.styled";
 
 function Header({ toggleSidebar }) {
   return (
@@ -9,10 +15,12 @@ function Header({ toggleSidebar }) {
       <HeaderLeft>
         <Link to="/" className="logo">
           <Logo
-            src="/images/ethionet-logo.png"
+            // src="/assets/images/ethionet-logo.png" // Use this for src/assets/images/ethionet-logo.png
+            src="/ethionet-logo.png" // Uncomment this if logo is in public/ethionet-logo.png
             alt="Ethionet Logo"
             onError={(e) => {
-              e.target.src = 'https://placehold.co/80x40/1e40af/ffffff?text=LOGO';
+              e.target.src =
+                "https://placehold.co/80x40/1e40af/ffffff?text=LOGO";
             }}
           />
         </Link>

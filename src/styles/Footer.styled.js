@@ -1,23 +1,29 @@
-// src/styles/Footer.styled.js
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
-  background-color: #1e3a8a;
+  background-color: #1e40af;
   color: #ffffff;
-  padding: 3rem 1rem;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+`;
+
+export const FooterLogo = styled.img`
+  height: 50px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  margin: 0 auto 2rem;
 `;
 
 export const FooterColumns = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  max-width: 80rem;
-  margin: 0 auto 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
@@ -26,23 +32,27 @@ export const FooterColumn = styled.div`
   flex-direction: column;
 `;
 
-export const FooterHeading = styled.h4`
-  font-size: 1.5rem;
+export const FooterHeading = styled.h3`
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #fb923c;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 `;
 
 export const FooterList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
 `;
 
 export const FooterListItem = styled.li`
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+
   a {
     color: #ffffff;
-    transition: color 0.2s;
+    text-decoration: none;
+    transition: color 0.3s ease;
 
     &:hover {
       color: #fb923c;
@@ -52,14 +62,15 @@ export const FooterListItem = styled.li`
 
 export const SocialIcons = styled.div`
   display: flex;
+  justify-content: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 `;
 
 export const SocialIcon = styled.a`
   color: #ffffff;
-  font-size: 1.25rem;
-  transition: color 0.2s;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
 
   &:hover {
     color: #fb923c;
@@ -67,14 +78,16 @@ export const SocialIcon = styled.a`
 `;
 
 export const ContactInfo = styled.div`
-  color: #d1d5db;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  font-size: 1rem;
+
+  p {
+    margin-bottom: 0.75rem;
+  }
 
   a {
-    color: #d1d5db;
-    transition: color 0.2s;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 
     &:hover {
       color: #fb923c;
@@ -83,8 +96,8 @@ export const ContactInfo = styled.div`
 `;
 
 export const FooterBottom = styled.div`
-  text-align: center;
-  color: #9ca3af;
-  border-top: 1px solid #1e40af;
-  padding-top: 2rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.875rem;
 `;
