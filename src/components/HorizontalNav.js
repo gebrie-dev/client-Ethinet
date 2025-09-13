@@ -1,6 +1,6 @@
 // src/components/HorizontalNav.js
 import { useState } from "react";
-import { Link } from "react-router-dom"; // Removed RouterNavLink
+import { Link } from "react-router-dom";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import {
   NavContainer,
@@ -31,7 +31,6 @@ function HorizontalNav({ openModal }) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // This function is now used directly in onClicks to be more explicit.
   const toggleMobileDropdown = (dropdown) => {
     setMobileActiveDropdown(
       mobileActiveDropdown === dropdown ? null : dropdown
