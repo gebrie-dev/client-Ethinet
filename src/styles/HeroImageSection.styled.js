@@ -1,6 +1,5 @@
 // src/styles/HeroImageSection.styled.js
 import styled, { keyframes, css } from "styled-components";
-import { Link } from "react-router-dom";
 
 // Keyframes for professional animations
 const fadeIn = keyframes`

@@ -1,20 +1,6 @@
 // src/styles/AboutVisionSection.styled.js
 import styled, { keyframes, css } from 'styled-components';
 
-// Keyframe animation for content expansion
-const contentExpand = keyframes`
-  from {
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    max-height: 1000px;
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
 // A general fade-in animation for all content
 const fadeIn = keyframes`
   from {

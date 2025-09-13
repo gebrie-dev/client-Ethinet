@@ -1,5 +1,5 @@
 // src/styles/HorizontalNav.styled.js
-import styled, { keyframes, css } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { NavLink as RouterNavLink, Link } from "react-router-dom";
 
 // Keyframes for animations
