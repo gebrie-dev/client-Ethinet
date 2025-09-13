@@ -18,6 +18,7 @@ import {
   FigureIcon,
   FigureNumber,
   FigureText,
+  LogosCarouselWrapper,
 } from '../styles/TrustSection.styled';
 
 function TrustSection() {
@@ -33,39 +34,45 @@ function TrustSection() {
 
   const testimonials = [
     {
-      text: "Ethionet's service was reliable and professional. They exceeded our expectations.",
-      cite: "John Doe, CEO of ABC Corp",
+      text: "Ethionet's translation services were exceptional. They delivered accurate, culturally-appropriate translations that helped us successfully enter the Ethiopian market. Their attention to detail and professional approach exceeded our expectations.",
+      cite: "Sarah Johnson, International Business Director, TechCorp Global",
     },
     {
-      text: "Their translation services helped us expand to new markets seamlessly.",
-      cite: "Jane Smith, Marketing Director",
+      text: "Working with Ethionet transformed our digital presence. Their comprehensive SEO strategy and social media management increased our online visibility by 300%. They truly understand both local and international markets.",
+      cite: "Ahmed Hassan, Marketing Manager, East Africa Trading Co.",
     },
     {
-      text: "The digital marketing strategies were a game-changer for our brand.",
-      cite: "Mike Johnson, Entrepreneur",
+      text: "The team's expertise in both translation and digital marketing is unmatched. They helped us localize our entire product suite while building a strong online presence. The ROI has been remarkable.",
+      cite: "Dr. Maria Rodriguez, CEO, HealthTech Solutions",
     },
+    {
+      text: "Ethionet's institutional services are top-notch. They handled our large-scale document translation project with precision and delivered ahead of schedule. Their certified translations are trusted by government agencies.",
+      cite: "Prof. Tesfaye Gebre, Director, Ethiopian Research Institute",
+    },
+  ];
+
+  const clientLogos = [
+    { name: 'Ministry of Finance', src: '/logo_ministry_finance.png' },
+    { name: 'Addis Ababa University', src: '/aau.png' },
+    { name: 'Ethio Telecom', src: '/tele.png' },
+    { name: 'Commercial Bank of Ethiopia', src: '/cbe.png' },
+
   ];
 
   return (
     <TrustContainer>
       <TrustHeading>Trusted by Industry Leaders</TrustHeading>
-      <LogosCarousel>
-        <LogoImage
-          src="https://placehold.co/120x60/dbeafe/1e40af?text=Client+1"
-          alt="Client Logo 1"
-          onError={(e) => { e.target.src = 'https://placehold.co/120x60/dbeafe/1e40af?text=Client+1'; }}
-        />
-        <LogoImage
-          src="https://placehold.co/120x60/dbeafe/1e40af?text=Client+2"
-          alt="Client Logo 2"
-          onError={(e) => { e.target.src = 'https://placehold.co/120x60/dbeafe/1e40af?text=Client+2'; }}
-        />
-        <LogoImage
-          src="https://placehold.co/120x60/dbeafe/1e40af?text=Client+3"
-          alt="Client Logo 3"
-          onError={(e) => { e.target.src = 'https://placehold.co/120x60/dbeafe/1e40af?text=Client+3'; }}
-        />
-      </LogosCarousel>
+      <LogosCarouselWrapper>
+        <LogosCarousel>
+          {clientLogos.map((logo, index) => (
+            <LogoImage key={index} src={logo.src} alt={logo.name} />
+          ))}
+          {/* Duplicate logos for seamless animation */}
+          {clientLogos.map((logo, index) => (
+            <LogoImage key={`dup-${index}`} src={logo.src} alt={logo.name} />
+          ))}
+        </LogosCarousel>
+      </LogosCarouselWrapper>
       <TestimonialSlider>
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
@@ -91,10 +98,10 @@ function TrustSection() {
         </FigureItem>
         <FigureItem>
           <div className="flex items-center mb-2">
-            <FigureIcon>
+            <FigureIcon className="blue">
               <FaProjectDiagram />
             </FigureIcon>
-            <FigureNumber>500+</FigureNumber>
+            <FigureNumber className="blue">500+</FigureNumber>
           </div>
           <FigureText>Projects Completed</FigureText>
         </FigureItem>

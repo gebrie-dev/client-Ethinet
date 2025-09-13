@@ -6,16 +6,18 @@ import {
   FaYoutube, 
   FaEnvelope, 
   FaPhone,
+  FaMapMarkerAlt,
   FaBullseye,
   FaUsers,
   FaBriefcase,
   FaLanguage,
   FaLightbulb,
-  FaChalkboardTeacher 
+  FaChalkboardTeacher,
 } from 'react-icons/fa';
 import {
   FooterContainer,
-  FooterColumns,
+  Logo,
+  FooterGrid,
   FooterColumn,
   FooterHeading,
   FooterList,
@@ -24,6 +26,7 @@ import {
   SocialIcon,
   ContactInfo,
   FooterBottom,
+  PoweredBy,
 } from '../styles/Footer.styled';
 
 function Footer() {
@@ -31,54 +34,13 @@ function Footer() {
 
   return (
     <FooterContainer>
-      <logo
-        src="/logo.png"
-        alt="Ethionet Logo"
-        onError={(e) => { e.target.src = 'https://placehold.co/150x50/dbeafe/1e40af?text=Ethionet+Logo'; }}
-      />
-      <FooterColumns>
+      <FooterGrid>
+        {/* Ethionet Logo and Socials Column */}
         <FooterColumn>
-          <FooterHeading>About</FooterHeading>
-          <FooterList>
-            <FooterListItem>
-              <Link to="/about#mission" className="hover:text-orange-400 flex items-center">
-                <FaBullseye className="mr-2" /> Mission
-              </Link>
-            </FooterListItem>
-            <FooterListItem>
-              <Link to="/about#team" className="hover:text-orange-400 flex items-center">
-                <FaUsers className="mr-2" /> Team
-              </Link>
-            </FooterListItem>
-            <FooterListItem>
-              <Link to="/career" className="hover:text-orange-400 flex items-center">
-                <FaBriefcase className="mr-2" /> Careers
-              </Link>
-            </FooterListItem>
-          </FooterList>
-        </FooterColumn>
-        <FooterColumn>
-          <FooterHeading>Services</FooterHeading>
-          <FooterList>
-            <FooterListItem>
-              <Link to="/services#translation" className="hover:text-orange-400 flex items-center">
-                <FaLanguage className="mr-2" /> Translation
-              </Link>
-            </FooterListItem>
-            <FooterListItem>
-              <Link to="/services#digital-marketing" className="hover:text-orange-400 flex items-center">
-                <FaLightbulb className="mr-2" /> Digital Marketing
-              </Link>
-            </FooterListItem>
-            <FooterListItem>
-              <Link to="/services#tutoring" className="hover:text-orange-400 flex items-center">
-                <FaChalkboardTeacher className="mr-2" /> Tutoring
-              </Link>
-            </FooterListItem>
-          </FooterList>
-        </FooterColumn>
-        <FooterColumn>
-          <FooterHeading>Connect</FooterHeading>
+          <Logo src="/logo.png" alt="Ethionet Logo" />
+          <p className="description">
+            Your partner for language and digital solutions.
+          </p>
           <SocialIcons>
             <SocialIcon href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
@@ -93,18 +55,73 @@ function Footer() {
               <FaYoutube />
             </SocialIcon>
           </SocialIcons>
+        </FooterColumn>
+
+        {/* About & Services Links Column */}
+        <FooterColumn>
+          <FooterHeading>Company</FooterHeading>
+          <FooterList>
+            <FooterListItem>
+              <Link to="/about">
+                <FaBullseye /> About Us
+              </Link>
+            </FooterListItem>
+            <FooterListItem>
+              <Link to="/services">
+                <FaLanguage /> Our Services
+              </Link>
+            </FooterListItem>
+            <FooterListItem>
+              <Link to="/career">
+                <FaBriefcase /> Careers
+              </Link>
+            </FooterListItem>
+            <FooterListItem>
+              <Link to="/contact">
+                <FaUsers /> Contact Us
+              </Link>
+            </FooterListItem>
+          </FooterList>
+        </FooterColumn>
+
+        {/* Legal & Policy Links Column */}
+        <FooterColumn>
+          <FooterHeading>Resources</FooterHeading>
+          <FooterList>
+            <FooterListItem>
+              <Link to="/privacy-policy">Privacy Policy</Link>
+            </FooterListItem>
+            <FooterListItem>
+              <Link to="/terms-of-service">Terms of Service</Link>
+            </FooterListItem>
+            <FooterListItem>
+              <Link to="/faq">FAQ</Link>
+            </FooterListItem>
+          </FooterList>
+        </FooterColumn>
+
+        {/* Contact Info Column */}
+        <FooterColumn>
+          <FooterHeading>Get in Touch</FooterHeading>
           <ContactInfo>
-            <p className="flex items-center">
-              <FaEnvelope className="mr-2" /> Email: <a href="mailto:info@ethionet.et" className="hover:text-orange-400 ml-1">info@ethionet.et</a>
+            <p>
+              <FaMapMarkerAlt /> Addis Ababa, Ethiopia
             </p>
-            <p className="flex items-center">
-              <FaPhone className="mr-2" /> Phone: <a href="tel:+251914696509" className="hover:text-orange-400 ml-1">+251914696509</a>
+            <p>
+              <FaEnvelope /> <a href="mailto:info@ethionet.et">info@ethionet.et</a>
+            </p>
+            <p>
+              <FaPhone /> <a href="tel:+251914696509">+251914696509</a>
             </p>
           </ContactInfo>
         </FooterColumn>
-      </FooterColumns>
+      </FooterGrid>
+
       <FooterBottom>
         <p>&copy; {currentYear} Ethionet Translation and Digital Service. All Rights Reserved.</p>
+        <PoweredBy>
+          Powered by <a href="https://gebrie.netlify.app" target="_blank" rel="noopener noreferrer">Gebrie</a>
+        </PoweredBy>
       </FooterBottom>
     </FooterContainer>
   );

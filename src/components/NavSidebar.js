@@ -27,64 +27,60 @@ function NavSidebar({ isOpen, toggleSidebar, openModal }) {
       </CloseButton>
       <NavList>
         <NavItem>
-          <Link to="/" onClick={toggleSidebar} className="text-blue-700 hover:text-orange-500 text-lg font-medium">
+          <Link to="/" onClick={toggleSidebar}>
             Home
           </Link>
         </NavItem>
         <NavItem>
-          <DropdownToggle onClick={toggleDropdown} className="flex items-center justify-between">
-            Services <FaChevronDown className={`ml-2 text-sm ${isDropdownOpen ? 'rotate-180' : ''}`} />
+          <DropdownToggle onClick={toggleDropdown} className={isDropdownOpen ? 'rotate-180' : ''}>
+            Services <FaChevronDown className="ml-2 text-sm" />
           </DropdownToggle>
-          <DropdownMenu className={isDropdownOpen ? '' : 'hidden'}>
+          <DropdownMenu className={isDropdownOpen ? 'show' : ''}>
             <DropdownItem>
-              <Link to="/services#translation" onClick={toggleSidebar} className="text-blue-600 hover:text-orange-400">
+              <Link to="/services#translation" onClick={toggleSidebar}>
                 Translation
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link to="/services#digital-marketing" onClick={toggleSidebar} className="text-blue-600 hover:text-orange-400">
+              <Link to="/services#digital-marketing" onClick={toggleSidebar}>
                 Digital Marketing
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link to="/services#tutoring" onClick={toggleSidebar} className="text-blue-600 hover:text-orange-400">
+              <Link to="/services#tutoring" onClick={toggleSidebar}>
                 Tutoring
               </Link>
             </DropdownItem>
           </DropdownMenu>
         </NavItem>
         <NavItem>
-          <Link to="/products" onClick={toggleSidebar} className="text-blue-700 hover:text-orange-500 text-lg font-medium">
+          <Link to="/products" onClick={toggleSidebar}>
             Products
           </Link>
         </NavItem>
         <NavItem>
-          <Link to="/academy" onClick={toggleSidebar} className="text-blue-700 hover:text-orange-500 text-lg font-medium">
+          <Link to="/academy" onClick={toggleSidebar}>
             Academy
           </Link>
         </NavItem>
         <NavItem>
-          <Link to="/career" onClick={toggleSidebar} className="text-blue-700 hover:text-orange-500 text-lg font-medium">
+          <Link to="/career" onClick={toggleSidebar}>
             Career
           </Link>
         </NavItem>
         <NavItem>
-          <Link to="/about" onClick={toggleSidebar} className="text-blue-700 hover:text-orange-500 text-lg font-medium">
+          <Link to="/about" onClick={toggleSidebar}>
             About Us
           </Link>
         </NavItem>
         <NavItem>
-          <Link to="/institutional-services" onClick={toggleSidebar} className="text-blue-700 hover:text-orange-500 text-lg font-medium">
+          <Link to="/institutional-services" onClick={toggleSidebar}>
             Institutional Services
           </Link>
         </NavItem>
+       
         <NavItem>
-          <Link to="/booking-payment" onClick={toggleSidebar} className="text-blue-700 hover:text-orange-500 text-lg font-medium">
-            Booking & Payments
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link to="/contact" onClick={toggleSidebar} className="text-blue-700 hover:text-orange-500 text-lg font-medium">
+          <Link to="/contact" onClick={toggleSidebar}>
             Contact Us
           </Link>
         </NavItem>
