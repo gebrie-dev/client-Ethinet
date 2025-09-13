@@ -11,8 +11,6 @@ import {
   FaUsers,
   FaBriefcase,
   FaLanguage,
-  FaLightbulb,
-  FaChalkboardTeacher,
 } from 'react-icons/fa';
 import {
   FooterContainer,
